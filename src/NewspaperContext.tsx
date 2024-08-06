@@ -184,7 +184,7 @@ const initialArticles: Article[] = [
     }
 ]
 
-type FooBar = {
+type NewspaperContextValues = {
     articles: Article[]
     selectedArticle: Article | null
     newspaperArticles: Article[]
@@ -194,7 +194,7 @@ type FooBar = {
     removeArticleFromNewspaper: (article: Article) => void
 }
 
-const NewspaperContext = createContext<FooBar>({
+const NewspaperContext = createContext<NewspaperContextValues>({
     articles: [],
     selectedArticle: null,
     newspaperArticles: [],
