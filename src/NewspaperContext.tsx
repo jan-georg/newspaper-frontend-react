@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren, useContext, useMemo, useState } from "react"
-import { Article } from "./generated/newspaper.schemas"
+import { Article } from "generated/newspaper.schemas"
 
 const initialArticles: Article[] = [
     {
@@ -207,7 +207,7 @@ const NewspaperContext = createContext<FooBar>({
 export function NewspaperProvider({ children }: PropsWithChildren) {
     const [articles, setArticles] = useState<Article[]>(initialArticles)
     const [selectedArticleId, setSelectedArticleId] = useState<Article["id"] | null>(null)
-    const [newspaperArticleIds, setNewspaperArticleIds] = useState<Array<Article["id"]>>([2])
+    const [newspaperArticleIds, setNewspaperArticleIds] = useState<Array<Article["id"]>>([])
 
     const selectedArticle = useMemo(
         () => articles.find((x) => x.id === selectedArticleId) ?? null,

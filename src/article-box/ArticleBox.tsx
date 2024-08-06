@@ -1,4 +1,4 @@
-import { Article } from "../generated/newspaper.schemas"
+import { Article } from "generated/newspaper.schemas"
 
 type ArticleBoxProps = {
     article: Article
