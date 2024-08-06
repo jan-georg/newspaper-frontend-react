@@ -222,7 +222,13 @@ export function NewspaperProvider({ children }: PropsWithChildren) {
     const selectArticle = (article: Article) => setSelectedArticleId(article.id)
     const deselectArticle = () => setSelectedArticleId(null)
 
-    const addArticleToNewspaper = (article: Article) => setNewspaperArticleIds((prev) => [...prev, article.id])
+    const addArticleToNewspaper = (article: Article) => {
+        const matchedArticle = newspaperArticles.find(
+            (articleInNewspaper: Article) => articleInNewspaper.topic === article.topic
+        )
+        if (!matchedArticle) setNewspaperArticleIds((prev) => [...prev, article.id])
+    }
+
     const removeArticleFromNewspaper = (article: Article) =>
         setNewspaperArticleIds((prev) => prev.filter((x) => x !== article.id))
 

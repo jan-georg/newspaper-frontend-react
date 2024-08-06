@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import { useNewspaperContext } from "../NewspaperContext"
+import { ArticleDisplay } from "../components/ArticleDisplay"
 
 export function ArticleList() {
     const { articles, newspaperArticles, selectedArticle, selectArticle } = useNewspaperContext()
@@ -20,12 +21,7 @@ export function ArticleList() {
                         })}
                         onClick={() => selectArticle(article)}
                     >
-                        <div className="text font-bold">{article.title}</div>
-                        <div className="flex flex-row space-x-10 text-gray-500">
-                            <div>{article.author}</div>
-                            <div>|</div>
-                            <div>{article.topic}</div>
-                        </div>
+                        <ArticleDisplay article={article} />
                     </div>
                 )
             })}
