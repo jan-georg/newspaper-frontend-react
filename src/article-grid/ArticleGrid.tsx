@@ -9,6 +9,7 @@ export function ArticleGird() {
         useNewspaperContext()
 
     const handleAdd = () => {
+        //if(!selectedArticle) return
         addArticleToNewspaper(selectedArticle!)
         deselectArticle()
     }
