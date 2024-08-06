@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.seleccted {
+    background-color: #22f4ae;
+    border: .125rem solid #1bc38b;
+    color: #0d6145;
+
+    & div {
+        color: #0d6145;
+    }
+}

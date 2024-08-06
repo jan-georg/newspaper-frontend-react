@@ -14,8 +14,7 @@ export function ArticleList() {
                     <div
                         key={article.id}
                         className={classNames("border-2 rounded-lg p-3 mb-3 shadow", {
-                            "bg-blue-200": isSelected,
-                            "border-blue-300": isSelected,
+                            "seleccted": isSelected,
                             "bg-gray-200": isInNewspaper,
                             "hover:cursor-pointer": !isInNewspaper && !isSelected
                         })}
